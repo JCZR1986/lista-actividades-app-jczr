@@ -2,27 +2,27 @@
 
   <!-- Formulario para agregar o editar actividades -->
   <div *ngIf="actividadEditando; else agregar" class="form-container">
-    <h3>Editar Actividad</h3>
-    <input [(ngModel)]="actividadEditando.nombre" placeholder="Nombre de la actividad" class="input">
-    <button (click)="guardarEdicion()" class="btn btn-save">Guardar</button>
-    <button (click)="actividadEditando = null" class="btn btn-cancel">Cancelar</button>
+    <h3 data-cy="VbhbT4">Editar Actividad</h3>
+    <input data-cy="VbhbT4" [(ngModel)]="actividadEditando.nombre" placeholder="Nombre de la actividad" class="input">
+    <button data-cy="VbhbT5" (click)="guardarEdicion()" class="btn btn-save">Guardar</button>
+    <button data-cy="VbhbT6" (click)="actividadEditando = null" class="btn btn-cancel">Cancelar</button>
   </div>
 
   <ng-template #agregar>
-    <div class="form-container">
-      <h3>Agregar Actividad</h3>
-      <input [(ngModel)]="nuevaActividad" placeholder="Nombre de la actividad" class="input">
-      <button (click)="agregarActividad()" class="btn btn-add">Agregar</button>
+    <div data-cy="VbhbT7" class="form-container">
+      <h3 data-cy="VbhbT8">Agregar Actividad</h3>
+      <input data-cy="VbhbT9" [(ngModel)]="nuevaActividad" placeholder="Nombre de la actividad" class="input">
+      <button data-cy="VbhbT1" (click)="agregarActividad()" class="btn btn-add">Agregar</button>
     </div>
   </ng-template>
 
   <!-- Lista de actividades -->
-  <ul class="actividades-list">
-    <li *ngFor="let actividad of actividades" class="actividad-item">
-      <span>{{ actividad.nombre }}</span>
+  <ul data-cy="VbhbT2" class="actividades-list">
+    <li data-cy="VbhbT3" *ngFor="let actividad of actividades" class="actividad-item">
+      <span data-cy="VbhbT4">{{ actividad.nombre }}</span>
       <div class="actions">
-        <button (click)="editarActividad(actividad)" class="btn btn-edit">Editar</button>
-        <button (click)="eliminarActividad(actividad.id)" class="btn btn-delete">Eliminar</button>
+        <button data-cy="VbhbT5" (click)="editarActividad(actividad)" class="btn btn-edit">Editar</button>
+        <button data-cy="VbhbT6" (click)="eliminarActividad(actividad.id)" class="btn btn-delete">Eliminar</button>
       </div>
     </li>
   </ul>
